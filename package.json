@@ -1,8 +1,10 @@
 {
   "name": "todos",
   "version": "0.1.0",
+  "author": "Alexis",
+  "description": "Simple Electron/React Desktop todos app using a Laravel API.",
   "private": true,
-  "main": "./src/electron-entry.js",
+  "main": "src/electron.js",
   "dependencies": {
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
@@ -17,7 +19,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "electron": "electron ."
+    "electron": "electron .",
+    "electron-pack": "electron-builder --dir",
+    "electron-dist": "electron-builder"
   },
   "eslintConfig": {
     "extends": [
@@ -39,6 +43,19 @@
   },
   "devDependencies": {
     "axios": "^1.6.1",
-    "electron": "^27.0.4"
+    "electron": "^27.0.4",
+    "electron-builder": "^24.6.4"
+  },
+  "build": {
+    "appId": "com.laravel.todos",
+    "win": {
+      "target": "nsis",
+      "icon": "public/todos.ico"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "public/todos.icns"
+    },
+    "extends": null
   }
 }
