@@ -4,7 +4,7 @@ import AddTodo from './AddTodo';
 import TodoList from './TodoList';
 import './App.css';
 
-const API_URL = 'https://laravel_todos_api.com/api/todos';
+const API_URL = 'https://local.laravel_todos_api.com/api/todos';
 
 function App() {
 

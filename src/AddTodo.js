@@ -1,34 +1,23 @@
-import React, {Component} from 'react';
+import React, {useState} from 'react';
 
-class AddTodo extends Component {
-    constructor() {
-        super();
+const AddTodo = () => {
+    const [value, setValue] = useState('');
 
-        this.state = {
-            value: ''
-        };
-
-        this.add = this.add.bind(this);
-    }
-
-    add() {
+    const add = () => {
         this.props.createTodo(this.state.value);
-
         this.setState({value: ''});
     }
 
-    render() {
         return (
             <div className="create-todo">
                 <input type="text"
-                       value={this.state.value}
+                       value={value}
                        placeholder="What should I do?"
-                       onChange={(e) => { this.setState({value: e.target.value}) }}/>
+                       onChange={(e) => {setValue(e.target.value)}}/>
 
-                <button onClick={this.add}>ADD</button>
+                <button onClick={add}>ADD</button>
             </div>
-        );
-    }
+        )
 }
 
 export default AddTodo;
