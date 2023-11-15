@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 
-const AddTodo = () => {
+const AddTodo = ({ createTodo }) => {
     const [value, setValue] = useState('');
 
     const add = () => {
-        this.props.createTodo(this.state.value);
-        this.setState({value: ''});
+        createTodo(value);
+        setValue('');
     }
 
         return (
